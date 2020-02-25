@@ -1,0 +1,24 @@
+project:
+  name: my-cfn-project
+  regions:
+    - us-west-2
+    - eu-north-1
+tests:
+  test1us:
+    parameters: 
+      myKeyPair: "sparkoregonec2KEY"
+      VpcId: "vpc-5571f82d"
+      SubnetIds: subnet-a86590f5, subnet-69332910, subnet-ce6f6885, subnet-cf0d61e4
+    regions: 
+      - us-west-2
+    template: ./5-FullStack-ChangeSet.yaml
+  test2eu:
+    parameters: 
+      myKeyPair: "stockholmkeypair"
+      VpcId: "vpc-c59542ac"
+      SubnetIds: subnet-1a2c3a50, subnet-4955a132, subnet-8a23f6e3
+    regions: 
+      - eu-north-1
+    template: ./5-FullStack-ChangeSet.yaml
+
+    
